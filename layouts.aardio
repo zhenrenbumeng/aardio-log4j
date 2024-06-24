@@ -9,12 +9,12 @@ basic = function(loggingEvent,...){
 	var arg = {...}
 	for i,v in ..table.eachIndex(arg){
 		if(type(v) == type.table){
-			msg = msg +"    " + ..util.table.stringify(v)
+			msg = msg +" " + ..util.table.stringify(v)
 		}else{
-			msg = msg + "    " +tostring(v)
+			msg = msg + " " +tostring(v)
 		}
 	}
-	var toast = ..string.format("[%s] [%-5s] [%s]:",times, loggingEvent.level,loggingEvent.loggerCategory)
+	var toast = ..string.format("[%-23s] [%-5s] [%s]:",times, loggingEvent.level,loggingEvent.loggerCategory)
 	msg = toast+msg
 	return msg; 
 };
